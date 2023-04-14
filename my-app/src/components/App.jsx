@@ -1,6 +1,11 @@
 import { React, useState } from "react";
+import TODoItem from "./ToDoItem";
+import Header from "./Header";
+import Form from "./Form";
+import Header1 from "./Header1";
 
 export default function App() {
+  // React hook.
   const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
 
@@ -8,7 +13,7 @@ export default function App() {
     const newValue = event.target.value;
     setInputText(newValue);
   }
-
+  // Using "..." Spread Operator.
   function addItem() {
     setItems((prevItems) => {
       return [...prevItems, inputText];
@@ -19,21 +24,58 @@ export default function App() {
   return (
     <div className="container">
       <div className="heading">
-        <h1>To-Do List</h1>
+        <Header />
       </div>
       <div className="form">
-        <input onChange={handleChange} type="text" value={inputText} />
-        <button onClick={addItem}>
-          <span>Add Item</span>
-        </button>
+        <Form onChange={handleChange} value={inputText} onClick={addItem} />
       </div>
       <div>
         <ul>
           {items.map((todoItem) => (
-            <li>{todoItem}</li>
+            /* We are using TODOItem component instead of li  */
+            <TODoItem text={todoItem} />
           ))}
         </ul>
       </div>
     </div>
   );
 }
+
+function App2() {
+  // React hook.
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+  // Using "..." Spread Operator.
+  function addItem() {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <Header1 />
+      </div>
+      <div className="form">
+        <Form onChange={handleChange} value={inputText} onClick={addItem} />
+      </div>
+      <div>
+        <ul>
+          {items.map((todoItem) => (
+            /* We are using TODOItem component instead of li  */
+            <TODoItem text={todoItem} />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export { App2 };

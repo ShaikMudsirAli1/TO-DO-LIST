@@ -1,8 +1,8 @@
 /* Using "cLassName" we can beautify the the React Element. */
 
 body {
-  background-color: #ffeaa7;
-  min-height: 70vh;
+  background-color: orange;
+  min-height: 100vh;
   padding: 1rem;
   box-sizing: border-box;
   display: flex;
@@ -33,6 +33,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  font-family: cursive;
 }
 .heading h1 {
   transform: rotate(2deg);
@@ -64,7 +65,7 @@ button {
   text-decoration: none;
   padding-bottom: 3px;
   border-radius: 5px;
-  background-color: #ffeaa7;
+  background-color: orange;
 }
 button span {
   background: #f1f5f8;
@@ -72,6 +73,8 @@ button span {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   border: 2px solid hsl(198, 1%, 29%);
+  background-color: black;
+  color: white;
 }
 
 li {
