@@ -13,6 +13,7 @@ export default function App() {
     const newValue = event.target.value;
     setInputText(newValue);
   }
+
   // Using "..." Spread Operator.
   function addItem() {
     setItems((prevItems) => {
@@ -21,6 +22,14 @@ export default function App() {
     setInputText("");
   }
 
+  // filtering the items & Deleting the items in array.
+  function deleteItem(id) {
+    setItems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div className="container">
       <div className="heading">
@@ -30,12 +39,17 @@ export default function App() {
         <Form onChange={handleChange} value={inputText} onClick={addItem} />
       </div>
       <div>
-        <ul>
-          {items.map((todoItem) => (
+        <ol>
+          {items.map((todoItem, index) => (
             /* We are using TODOItem component instead of li  */
-            <TODoItem text={todoItem} />
+            <TODoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              onChecked={deleteItem}
+            />
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );
@@ -50,6 +64,7 @@ function App2() {
     const newValue = event.target.value;
     setInputText(newValue);
   }
+
   // Using "..." Spread Operator.
   function addItem() {
     setItems((prevItems) => {

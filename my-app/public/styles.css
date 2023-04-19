@@ -1,13 +1,13 @@
-/* Using "cLassName" we can beautify the the React Element. */
+/* Using "cLassName" in camel casing  we can beautify the the React Element. */
 
 body {
+  margin: 5rem;
   background-color: orange;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 4rem;
   box-sizing: border-box;
+  justify-content: space-evenly;
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: hsl(198, 1%, 29%);
   font-family: "Architects Daughter", cursive;
   text-align: center;
@@ -40,7 +40,7 @@ body {
   padding: 0.2rem 1.2rem;
   border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
   background-color: #fdcb6e;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .form input {
